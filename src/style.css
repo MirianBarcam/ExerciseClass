@@ -1,1 +1,9 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: rgb(21, 70, 81);
+}
+
+.title_person {
+  color: aliceblue;
+}
