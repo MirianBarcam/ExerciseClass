@@ -79,15 +79,22 @@ window.onload = function() {
   };
 
   let phraseGenerate = () => {
-    let position = numRandom();
-    let phrase = `${person[position].name} ${person[position].lastName} con dirección
-     ${address[position].dir.avenida} (${address[position].dir.city}), ${address[position].cp} 
-    trabaja en ${job[position].company} como ${job[position].position.job} ${job[position].position.level} 
-    desde hace ${job[position].antiquity} años`;
+    let position_person = numRandom();
+    let position_address = numRandom();
+    let position_job = numRandom();
+
+    let phrase = `${person[position_person].name} ${person[position_person].lastName} con dirección
+     ${address[position_address].dir.avenida} (${address[position_address].dir.city}), ${address[position_address].cp} 
+    trabaja en ${job[position_job].company} como ${job[position_job].position.job} ${job[position_job].position.level} 
+    desde hace ${job[position_job].antiquity} años`;
+
     return phrase;
   };
 
-  let datos = phraseGenerate();
+  const btn = document.querySelector("button");
 
-  document.getElementById("personaAleatoria").innerHTML = datos;
+  btn.addEventListener("click", function() {
+    let datos = phraseGenerate();
+    document.getElementById("randomPerson").innerHTML = datos;
+  });
 };
